@@ -1,0 +1,25 @@
+#Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+CREATE TABLE book_store (id INTEGER PRIMARY KEY, item_name TEXT, price INTEGER, author TEXT, number_of_pages INTEGER);
+
+INSERT INTO book_store VALUES (1, "In Search of Lost Time", 10, "Marcel Proust", 200);
+INSERT INTO book_store VALUES (2, " Ulysses", 20, "James Joyce", 200);
+INSERT INTO book_store VALUES (3, "Don Quixote", 130, "Miguel de Cervantes", 201);
+INSERT INTO book_store VALUES (4, "One Hundred Years of Solitude ", 150, "Gabriel Garcia Marquez", 202);
+INSERT INTO book_store VALUES (5, "The Great Gatsby", 180, "F. Scott Fitzgerald", 203);
+INSERT INTO book_store VALUES (6, "Moby Dick", 140, "Herman Melville", 204);
+INSERT INTO book_store VALUES (7, "War and Peace", 500, "Leo Tolstoy", 1500);
+INSERT INTO book_store VALUES (8, "Hamlet ", 78, "William Shakespeare", 200);
+INSERT INTO book_store VALUES (9, "The Odyssey ", 184, "Homer", 200);
+INSERT INTO book_store VALUES (10, "Madame Bovary", 157, "Gustave Flaubert", 200);
+INSERT INTO book_store VALUES (11, "The Divine Comedy", 150, "Dante Alighieri", 200);
+INSERT INTO book_store VALUES (12, "Lolita", 178, "Vladimir Nabokov", 200);
+INSERT INTO book_store VALUES (13, "The Brothers Karamazov", 192, "Fyodor Dostoyevsky", 200);
+INSERT INTO book_store VALUES (14, " Crime and Punishment", 125, "Fyodor Dostoyevsky", 200);
+INSERT INTO book_store VALUES (15, "Wuthering Heights", 159, "Emily Brontë", 200);
+
+SELECT * FROM book_store ORDER BY price;
+SELECT * FROM book_store WHERE number_of_pages > 170 AND number_of_pages < 250 ORDER BY item_name;
+SELECT author, SUM(price) FROM book_store GROUP BY author;
+
+
