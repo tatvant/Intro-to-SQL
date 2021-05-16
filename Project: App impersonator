@@ -1,0 +1,35 @@
+#Think about your favorite apps, and pick one that stores your data- like a game that stores scores, an app that lets you post updates, etc. Now in this project, you're going to imagine that the app stores your data in a SQL database (which is pretty likely!), and write SQL statements that might look like their own SQL.
+
+    #CREATE a table to store the data.
+    #INSERT a few example rows in the table.
+    #Use an UPDATE to emulate what happens when you edit data in the app.
+    #Use a DELETE to emulate what happens when you delete data in the app.
+
+CREATE TABLE personal_info(id INTEGER PRIMARY KEY, user_name TEXT, user_sex TEXT, user_age INTEGER, user_location TEXT);
+
+INSERT INTO personal_info (user_name, user_sex, user_age, user_location) VALUES ("Tatyana", "woman", "22", "Minsk");
+
+
+CREATE TABLE shopping_list(id INTEGER PRIMARY KEY, item_type TEXT, item_name TEXT, price INTEGER, date_of_purchase TEXT, payment_type_id INTEGER);
+
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("book", "Crime and Punishment", 15, "2021-03-01", 1);
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("book", "Rome Lords", 68, "2021-03-02", 1);
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("book", "In the dark", 20, "2021-03-03", 1);
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("cup", "Dedlain is coming...", 7, "2021-03-06", 1);
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("chocolate", "Chocolate with peanuts ", 8, "2021-03-10", 2);
+INSERT INTO shopping_list (item_type, item_name, price, date_of_purchase, payment_type_id) VALUES ("computer mouse", "USB mouse", 38, "2021-03-13", 2);
+
+CREATE TABLE payment_types(id INTEGER PRIMARY KEY, payment_method TEXT);
+
+INSERT INTO payment_types VALUES (1, "cash");
+INSERT INTO payment_types VALUES (2, "debit card");
+INSERT INTO payment_types VALUES (3, "bitcoin");
+
+
+UPDATE shopping_list SET item_name = "Exclusive computer mouse made by DELL" WHERE item_name = "USB mouse";
+
+SELECT * FROM shopping_list;
+
+DELETE FROM payment_types WHERE payment_method = "bitcoin";
+
+SELECT * FROM payment_types;
